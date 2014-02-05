@@ -28,23 +28,52 @@ namespace ConvertTemp
 
                 //Räkna ut vilka c/f fu ska skicka med till klassen.
 
+                TableRow tRadTop = new TableRow();
+                resultattabell.Rows.Add(tRadTop);
+
+                TableCell titleCell1 = new TableCell();
+                tRadTop.Cells.Add(titleCell1);
+
+                TableCell titleCell2 = new TableCell();
+                tRadTop.Cells.Add(titleCell2);
+
+                if (konvTyp1.Checked)
+                {
+                    titleCell1.Text = "Fahrenheit";
+                    titleCell2.Text = "Celcius";
+                }
+
+                else if (konvTyp2.Checked)
+                {
+                    titleCell1.Text = "Celcius";
+                    titleCell2.Text = "Fahrenheit";
+                }
 
                 for (int i = int.Parse(starttemp.Text); i <= int.Parse(sluttemp.Text); i = i + int.Parse(steg.Text))
                 {
+                    TableRow tRad = new TableRow();
+                    resultattabell.Rows.Add(tRad);
+
+                    TableCell tCell1 = new TableCell();
+                    tRad.Cells.Add(tCell1);
+
+                    TableCell tCell2 = new TableCell();
+                    tRad.Cells.Add(tCell2);
+
+                    tCell1.Text = i.ToString();
 
                     if (konvTyp1.Checked)
                     {
-                        Model.TemperatureConverter.FahrenheitToCelcius(i);
+                        tCell2.Text = Model.TemperatureConverter.FahrenheitToCelcius(i).ToString();
                     }
 
-                    else if (konvTyp1.Checked)
+                    else if (konvTyp2.Checked)
                     {
-                        Model.TemperatureConverter.CelsiusToFahrenheit(i);
+                        tCell2.Text = Model.TemperatureConverter.CelsiusToFahrenheit(i).ToString();
                     }
 
-                    
+                    resultattabell.Visible = true;
                 }
-                
             }
         }
     }
