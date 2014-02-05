@@ -22,31 +22,16 @@ namespace ConvertTemp
 
             if(IsValid)
             {
-                //Rendewra ut tabellen här
-                //Med hjälp av klasserna TableRow och TableCell
-                //som läggs till i table-kontrollen
-
-                //Räkna ut vilka c/f fu ska skicka med till klassen.
-
-                TableRow tRadTop = new TableRow();
-                resultattabell.Rows.Add(tRadTop);
-
-                TableCell titleCell1 = new TableCell();
-                tRadTop.Cells.Add(titleCell1);
-
-                TableCell titleCell2 = new TableCell();
-                tRadTop.Cells.Add(titleCell2);
-
                 if (konvTyp1.Checked)
                 {
-                    titleCell1.Text = "Fahrenheit";
-                    titleCell2.Text = "Celcius";
+                    TableHeaderCell1.Text = "Fahrenheit";
+                    TableHeaderCell2.Text = "Celsius";
                 }
 
                 else if (konvTyp2.Checked)
                 {
-                    titleCell1.Text = "Celcius";
-                    titleCell2.Text = "Fahrenheit";
+                    TableHeaderCell1.Text = "Celsius";
+                    TableHeaderCell2.Text = "Fahrenheit";
                 }
 
                 for (int i = int.Parse(starttemp.Text); i <= int.Parse(sluttemp.Text); i = i + int.Parse(steg.Text))
@@ -59,7 +44,7 @@ namespace ConvertTemp
 
                     TableCell tCell2 = new TableCell();
                     tRad.Cells.Add(tCell2);
-
+                     
                     tCell1.Text = i.ToString();
 
                     if (konvTyp1.Checked)
@@ -80,3 +65,8 @@ namespace ConvertTemp
 }
 
 //KOlla upp så att du har viewstatemode rätt överallt
+//Fixa till felmeddelandena
+//ev fixa med defulfbutton focus och select.
+//Ändra till dynamic på validatorerna
+
+//ev fixa så att en ruta poppar upp med validation summary.
