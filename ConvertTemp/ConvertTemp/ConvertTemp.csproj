@@ -59,6 +59,7 @@
   <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="default.aspx" />
+    <Content Include="error.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\TemperatureConverter.cs" />
@@ -69,6 +70,13 @@
     </Compile>
     <Compile Include="WebForm1.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

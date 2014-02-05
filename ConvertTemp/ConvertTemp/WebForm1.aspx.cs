@@ -78,3 +78,5 @@ namespace ConvertTemp
         }
     }
 }
+
+//KOlla upp så att du har viewstatemode rätt överallt
